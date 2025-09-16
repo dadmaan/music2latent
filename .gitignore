@@ -161,3 +161,7 @@ cython_debug/
 
 *.pt
 music2latent/models/
+
+input/
+output/
+logs/
