@@ -23,7 +23,7 @@ class EncoderDecoder:
         
     def get_models(self):
         gen = UNet().to(self.device)
-        checkpoint = torch.load(self.load_path_inference, map_location=self.device)
+        checkpoint = torch.load(self.load_path_inference, map_location=self.device, weights_only=False)
         gen.load_state_dict(checkpoint['gen_state_dict'], strict=False)
         self.gen = gen
 
