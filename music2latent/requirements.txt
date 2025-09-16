@@ -1,4 +1,6 @@
 numpy
 soundfile
+librosa
 huggingface_hub
-torch>=2.0.1
+--index-url https://download.pytorch.org/whl/cu124
+torch>=2.4.0

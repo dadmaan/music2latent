@@ -1,0 +1,22 @@
+services:
+  music2latent:
+    build: .
+    container_name: music2latent
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app
+    working_dir: /app
+    runtime: nvidia  # Explicitly set for NVIDIA GPU support (assumes toolkit is installed)
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    stdin_open: true
+    tty: true
+    restart: unless-stopped  # Optional: auto-restart on crashes

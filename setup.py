@@ -13,7 +13,7 @@ setup(
         'numpy',
         'soundfile',
         'huggingface_hub',
-        'torch',
+        'torch>=2.4.0',
     ],
     license='CC BY-NC 4.0',
     url='https://github.com/SonyCSLParis/music2latent',
